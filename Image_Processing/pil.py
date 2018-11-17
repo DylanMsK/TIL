@@ -52,5 +52,7 @@ def extract_metadata(file):
         print('Image format is wrong')
     print('Done')
 
+# 여러 이미지 처리 추가
 
-    print(extract_metadata('20170712_201505.jpg'))
+
+print(extract_metadata('20170712_201505.jpg'))
