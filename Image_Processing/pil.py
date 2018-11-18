@@ -1,58 +1,75 @@
 from PIL import Image
 from PIL.ExifTags import TAGS
+import os
 
 
-def extract_metadata(file):
-    extension = file.split('.')[-1]
+def extract_metadatas(folder_path):
+    file_list = os.listdir(folder_path)
+    for pic in file_list:
+        path = folder_path + '/' + pic
+        print('==========' + pic + '==========')
+        if extract_exif(path) != None:
+            GPSinfo = extract_GPS(path)
+            DateTimeinfo = extract_DateTimeOriginal(path)
+        else:
+            pass
+        print('\n')
+    return None
+
+def extract_DateTimeOriginal(file):
+    try:
+        print('\n- Time')
+        exif = extract_exif(file)
+        dateTimeOriginal = exif['DateTimeOriginal'].split()
+        date = dateTimeOriginal[0].split(':')
+        time = dateTimeOriginal[1].split(':')
+        year, month, day = date[0], date[1], date[2]
+        hour, minute, second = time[0], time[1], time[2]
+        print('    Date: {}/{}/{}\n    Time: {}:{}:{}'.format(year, month, day, hour, minute, second))
+        return date, time
+    except:
+        print('    There is no original datetime info in this picture')
+        return None
+
+def extract_GPS(file):
+    try:
+        print('- Loaction')
+        # extrat GPS from the exif data
+        exif = extract_exif(file)
+        GPSInfo = exif['GPSInfo']
+        latData = GPSInfo[2]
+        lngData = GPSInfo[4]
+        # calculate the lat/lng
+        latDeg, latMin, latSec = latData[0][0] / float(latData[0][1]), latData[2][0] / float(latData[2][1]), latData[2][0] / float(latData[2][1])
+        lngDeg, lngMin, lngSec = lngData[0][0] / float(lngData[0][1]), lngData[1][0] / float(lngData[1][1]), lngData[2][0] / float(lngData[2][1])
+        # correct the lat/lng based on N/E/W/S
+        Lat = round(latDeg + (latMin + latSec / 60.) / 60., 6)
+        if GPSInfo[1] != 'N':
+            Lat = Lat * -1
+        Lng = round(lngDeg + (lngMin + lngSec / 60.) / 60., 6)
+        if GPSInfo[3] != 'E':
+            Lng = Lng * -1
+        print("    Latitude: {}\n    Longitude: {}".format(Lat, Lng))
+        return Lat, Lng
+    except:
+        print("    There is no GPS info in this picture!")
+        return None
+
+def extract_exif(file):
+    extension = extension_checker(file)
     if (extension.lower() == 'jpg') | (extension.lower() == 'jpeg'):
-        img = Image.open(file)
-        info = img._getexif()
+        info = Image.open(file)._getexif()
         exif = {}
         for tag, value in info.items():
             decoded = TAGS.get(tag, tag)
             exif[decoded] = value
-        try:
-            # extrat GPS from the exif data
-            exifGPSInfo = exif['GPSInfo']
-            latData = exifGPSInfo[2]
-            lngData = exifGPSInfo[4]
-            # calculate the lat/lng
-            latDeg = latData[0][0] / float(latData[0][1])
-            latMin = latData[1][0] / float(latData[1][1])
-            latSec = latData[2][0] / float(latData[2][1])
-            lngDeg = latData[0][0] / float(latData[0][1])
-            lngMin = latData[1][0] / float(latData[1][1])
-            lngSec = latData[2][0] / float(latData[2][1])
-            # correct the lat/lng based on N/E/W/S
-            Lat = round(latDeg + (latMin + latSec / 60.) / 60., 6)
-            if exifGPSInfo[1] != 'N':
-                Lat = Lat * -1
-            Lng = round(lngDeg + (lngMin + lngSec / 60.) / 60., 6)
-            if exifGPSInfo[3] != 'E':
-                Lng = Lng * -1
-            print("Latitude: {}, Longitude: {}".format(Lat, Lng))
-        except:
-            print("There is no GPS info in this picture!")
-        
-        try:
-            exifDateTimeOriginal = exif['DateTimeOriginal'].split()
-            date = exifDateTimeOriginal[0].split(':')
-            time = exifDateTimeOriginal[1].split(':')
-            year = date[0]
-            month = date[1]
-            day = date[2]
-            hour = time[0]
-            minute = time[1]
-            second = time[2]
-            print('Year: {}\nMonth: {}\nDay: {}\nHour: {}\nMinute: {}\nSecond: {}'.format(year, month, day, hour, minute, second))
-        except:
-            print('There is no DateTime info in this picture')
+        return exif
         
     else:
         print('Image format is wrong')
-    print('Done')
+        return None
 
-# 여러 이미지 처리 추가
+def extension_checker(file):
+    extension = file.split('.')[-1]
+    return extension
 
-
-print(extract_metadata('20170712_201505.jpg'))
