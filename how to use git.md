@@ -30,10 +30,14 @@
 
 6. 자주 사용하는 명령어
 
-   1. `git status` ==> 파일/폴더의 변경 내용을 알려줌
-   2. `git diff` ==> 몇번째 줄이 어떻게 바뀌었는지 알려줌
+   1. `git status` ==> 파일/폴더의 변경 내용을 보여줌
+   2. `git diff` ==> 몇번째 줄이 어떻게 바뀌었는지 보여줌
    3. `git log` ==> 커밋 이력 확인
    4. `git remote` ==> 현재 프로젝트에 등록된 원격 저장소를 확인
+   5. `git remote show [remote name]` ==> 해당 remote url 보여줌
+   6. `git branch` ==> 모든 bracnh를 보여줌
+   7. `git branch [branch name]` ==> 새로운 branch 생성
+   8. `git checkout [branch name]` ==> 해당 branch로 이동
 
 
 ## Fix the error
