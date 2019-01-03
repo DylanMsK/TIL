@@ -7,7 +7,7 @@ import webbrowser
 ```python
 webbrowser.open(<url>)
 ```
-### Practice
+### - Practice
 ```python
 import webbrowser
 
