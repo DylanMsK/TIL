@@ -38,6 +38,7 @@
    6. `git branch` ==> 모든 bracnh를 보여줌
    7. `git branch [branch name]` ==> 새로운 branch 생성
    8. `git checkout [branch name]` ==> 해당 branch로 이동
+   9. `git merge [branch name]` ==> 해당 branch를 현재 branch로 merge
 
 
 ## Fix the error
