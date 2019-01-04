@@ -45,4 +45,11 @@
 - 서버 실행
 
   `flask run --host 0.0.0.0 --port 8080`
- 
+
+
+
+- 서버 자동 새로고침
+
+  `echo 'export FLASK_ENV=development' >> ~/.bashrc`
+
+  `source ~/.bashrc`

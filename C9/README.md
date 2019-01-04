@@ -26,8 +26,8 @@
   $ pyenv install --list	# pyenv로 설치 가능한 파일들 출력
   $ pyenv install 3.6.1
   $ echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-  
   $ source ~/.bashrc
+  $ pyenv global 3.6.1
   $ python -V		# python 버전확인
   Python 3.6.1
   ```
