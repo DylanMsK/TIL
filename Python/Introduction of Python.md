@@ -12,7 +12,7 @@
 
 ## [3. Python 기본 자료형](https://docs.python.org/3.6/tutorial/introduction.html)
 
-1. ### 숫자
+1. #### 숫자
 
    ```python
    >>> 17 / 3		# '/'는 무조건 float만 리턴
@@ -29,7 +29,7 @@
 
    
 
-2. ### 문자열
+2. #### 문자열
 
    ```python
    >>> 'doesn\'t'		# 동일한 따옴표를 쓸때는 이스케이프 문자(￦)로 사용 가능
@@ -88,9 +88,54 @@
    SyntaxError: invalid syntax
    ```
 
-### 3. 리스트
+   
 
-```
+3. #### 리스트
 
-```
+   문자열과 다른 모든 내장 [시퀀스](https://docs.python.org/ko/3.6/glossary.html#term-sequence) 형들처럼 리스트는 인덱싱하고 슬라이싱할 수 있다.
+
+   ```python
+   >>> squares = [1, 4, 9, 16, 25]
+   >>> squares
+   [1, 4, 9, 16, 25]
+   >>> squares[0]  # indexing returns the item
+   1
+   >>> squares[-1]
+   25
+   >>> squares[-3:]  # slicing returns a new list
+   [9, 16, 25]
+   ```
+
+   모든 슬라이스 연산은 요청한 항목들을 포함하는 새 리스트를 돌려준다. 이는 다음과 같은 슬라이스가 리스트의 새로운 (얕은) 복사본을 돌려준다는 뜻.
+
+   ```python
+   >>> squares[:]
+   [1, 4, 9, 16, 25]
+   >>> squares + [36, 49, 64, 81, 100]
+   [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+   ```
+
+   슬라이스에 대입하는 것도 가능한데, 리스트의 길이를 변경할 수 있고, 모든 항목을 삭제할 수도 있다.
+
+   ```python
+   >>> letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+   >>> letters
+   ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+   >>> # replace some values
+   >>> letters[2:5] = ['C', 'D', 'E']
+   >>> letters
+   ['a', 'b', 'C', 'D', 'E', 'f', 'g']
+   >>> # now remove them
+   >>> letters[2:5] = []
+   >>> letters
+   ['a', 'b', 'f', 'g']
+   >>> # clear the list by replacing all the elements with an empty list
+   >>> letters[:] = []
+   >>> letters
+   []
+   ```
+
+1. ### 
+
+## 9. 클래스
 
