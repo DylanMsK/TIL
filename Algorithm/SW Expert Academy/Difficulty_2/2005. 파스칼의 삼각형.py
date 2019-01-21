@@ -2,7 +2,11 @@
 
 
 T = int(input())
-N = int(input())
-init = [1]
-for i in range(N):
-    for j in range(len(init)):
+for _ in range(T):
+    N = int(input())
+    print(f'#{_+1}')
+    print(1)
+    init = [1, 1]
+    for i in range(N-1):
+        print(' '.join([str(__) for __ in init]))
+        init = [1] + [sum(init[j:j+2]) for j in range(len(init)-1)] + [1]
