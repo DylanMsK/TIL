@@ -1,13 +1,13 @@
 # url = 'https://www.acmicpc.net/problem/2751'
 
-# import sys
-# n = int(sys.stdin.readline())
+import sys
+n = int(sys.stdin.readline())
 
-# temp = []
-# for i in range(n):
-#     temp.append(int(sys.stdin.readline()))
+temp = []
+for i in range(n):
+    temp.append(int(sys.stdin.readline()))
 
-# print('\n'.join([str(i) for i in sorted(temp)]))
+print('\n'.join([str(i) for i in sorted(temp)]))
 
 
 
