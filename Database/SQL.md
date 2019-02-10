@@ -95,7 +95,7 @@ sqlite> CREATE TABLE classmates (
         );
 ```
 
-2-1. Datatype​      
+​	2-1. Datatype      
 
 | Affinity | Type                                                         |
 | -------- | ------------------------------------------------------------ |
@@ -105,7 +105,7 @@ sqlite> CREATE TABLE classmates (
 | NUMERIC  | NUMERIC, DEMICAL, DATE, DATETIME                             |
 | BLOB     | no datatype specified                                        |
 
-2-2. Table 및 schema 조회
+​	2-2. Table 및 schema 조회
 
 ```bash
 sqlite> .tables
@@ -120,4 +120,113 @@ sqlite> DROP TABLE classmates;
 sqlite> .tables
 ```
 
+- **Quiz. 다음과 같은 스키마를 가지고 있는 classmate 테이블을 만들어보세요.**
+
+  | Column  | Datatype |
+  | ------- | -------- |
+  | id      | INT      |
+  | name    | TEXT     |
+  | age     | INT      |
+  | address | TEXT     |
+
+  ```bash
+  sqlite> CREATE TABLE classmates (
+  id INT PRIMARY KEY,
+  name TEXT,
+  age INT,
+  address TEXT);
+  ```
+
 #### 3. 데이터 추가, 읽기, 수정, 삭제
+
+1. data 추가(INSERT)
+
+   ```sql
+   INSERT INTO table (column1, column2, ..) 
+   VALUES (value1, value2, ..)
+   ```
+
+   ```bash
+   sqlite> INSERT INTO classmates (name, age)
+   		VALUES ('강민수', 28);
+   ```
+
+   **QUIZ. classmates 테이블에  id가 2이고, 이름이 홍길동이고, 나이가 30이고, 주소가 서울인 데이터를 넣어봅시다.**
+
+   ```bash
+   sqlite> INSERT INTO classmates VALUES (2, '홍길동', 30, '서울');
+   ```
+
+   - **모든 데이터를 넣을때는 column을 명시할 필요가 없다!**
+
+   1-1. NULL값은 최소화
+
+   ```bash
+   sqlite> DROP TABLE classmates;
+   sqlite> CREATE TABLE classmates (
+   id INTEGERT PRIMARY KEY AUTOINCREMENT,	# AUTOINCREMENT는 INTETGER일때만 가능
+   name TEXT NOT NULL,
+   age INT NOT NULL,
+   address TEXT NOT NULL);
+   sqlite> INSERT INTO classmates (name, age) VALUES ('홍길동', 23);
+   ErrorL NOT NULL constraint failed: classmates.address
+   sqlite> INSERT INTO classmates VALUES (1, '홍길동', 50, '서울');
+   Error: UNIQUE constraint failed: classmates.id
+   ```
+
+2. data 가져오기(SELECT)
+
+   ```sql
+   SELECT * FROM table
+   SELECT column1, column2, .. FROM table
+   ```
+
+   2-1. table에서 특정 데이터 몇개만 가져오기
+
+   ```sql
+   SELECT column1, column2, .. FROM table LIMIT num
+   ```
+
+   2-2 table에서 특정 데이터 위에서 몇개만 가져오기
+
+   ```sql
+   SELECT column1, column2, .. FROM table LIMIT num OFFSET num
+   ```
+
+   **QUIZ. classmates에서 id, name column 값 중 세번째에 있는 값 하나만 가져오기**
+
+   ```bash
+   sqlite> SELECT id, name FRIM classmates LIMIT 1 OFFSET 2;
+   ```
+
+   2-3 table에서 특정한 값만 가져오기
+
+   ```sql
+   SELECT column1, column2, .. FROM table WHERE column=value
+   ```
+
+3. data 삭제(DELETE)
+
+   ```sql
+   DELETE FROM table WHERE condition
+   ```
+
+   - **일반적으로 데이터 중복이 불가능한 id값을 기준으로 삭제함!**
+
+4. data 수정(UPDATE)
+
+   ```sql
+   UPDATE table
+   SET column1=value1, column2=value2, ..
+   WHERE condition
+   ```
+
+   QUIZ. classmates 테이블에 id가 4인 레코드를 수정해봅시다.
+
+   ​		이름을 홍길동으로, 주소를 제주도로
+
+   ```bash
+   sqlite> UPDATE classmates SET name='홍길동', address="제주도" WHERE id=4;
+   ```
+
+   
