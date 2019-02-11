@@ -58,6 +58,7 @@
   ```bash
   # $ pyenv virtualenv <python version> <virtual environment name for setting>
   $ pyenv virtualenv 3.6.1 tele	# tele라는 가상환경을 생성
+  $ pyenv local tele            # 해당 폴더를 가상환경으로 setting
   ```
 
 - 가상환경 실행하기
