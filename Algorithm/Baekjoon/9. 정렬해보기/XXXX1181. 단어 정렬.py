@@ -1,10 +1,13 @@
 # url = 'https://www.acmicpc.net/problem/1181'
 
-n = int(input())
-lst = [''] * n
+# n = int(input())
+# lst = [''] * n
 
-for _ in range(n):
-    lst[_] = input()
+n = 13
+lst = ['but', 'i', 'wont', 'hesitate', 'no', 'more', 'no', 'more', 'it', 'cannot', 'wait', 'im', 'yours']
+
+# for _ in range(n):
+#     lst[_] = input()
 
 string_dict = {}
 for s in lst:
@@ -19,4 +22,8 @@ for s in lst:
         string_dict[length].append(s)
 
 
+
+
+
 print(string_dict)
+print(word_order(string_dict[4]))
