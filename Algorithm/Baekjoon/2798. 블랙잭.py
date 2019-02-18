@@ -2,19 +2,20 @@
 
 N, M = map(int, input().split())
 lst = list(map(int, input().split()))
-
-def black(lst):
-    temp = [0] * 3
-    for i in range(N):
-        temp[0] = lst[i]
-        for j in range(i+1, N):
-            temp[1] = lst[j]
-            for k in range(j+1, N):
-                temp[2] = lst[k]
-                if sum(temp) == M:
-                    print(M)
-                    return M
-black(lst)
+result = []
+temp = [0] * 3
+for i in range(N):
+    temp[0] = lst[i]
+    for j in range(i+1, N):
+        temp[1] = lst[j]
+        for k in range(j+1, N):
+            temp[2] = lst[k]
+            sum_ = sum(temp)
+            if sum_ > M:
+                continue
+            result.append(sum_)
+print(max(result))
+            
 
 
 # for i in range(1 << N):
