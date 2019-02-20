@@ -1,5 +1,6 @@
 # url = 'https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV18TrIqIwUCFAZN&categoryId=AV18TrIqIwUCFAZN&categoryType=CODE'
 
+# 내꺼
 def find_next():
     for now in range(1, V+1):
         if work[now][0] == 0:
@@ -27,3 +28,4 @@ for _ in range(10):
             work[next][0] -= 1
  
     print(f'#{_+1} {" ".join([str(i) for i in order])}')
+
