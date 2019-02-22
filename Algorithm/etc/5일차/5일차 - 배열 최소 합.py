@@ -1,50 +1,51 @@
 import sys
-sys.stdin = open('C:\\Users\\student\\PycharmProjects\\TT\\python5\\합_input.txt', 'r')
+sys.stdin = open('C:\\Users\\student\\Desktop\\github\\TIL\\Algorithm\\etc\\5일차\\합_input.txt', 'r')
 
-def find_next(arr, y, N, c):
-    in_perm = [False] * N
 
-    for i in range(1, y):
-        in_perm[arr[i]] = True
+def candidates(x_idx, nxt_y, N, candis):
+    visited = [False] * N
 
+    # for idx in range(nxt_y):
+    for idx in range(1, nxt_y):
+        # if x_idx[idx] == -1:
+        visited[x_idx[idx]] = True
+    
     n = 0
-    for i in range(1, N+1):
-        if in_perm[i-1] == False:
-            c[n] = i
+    for idx in range(N):
+        if visited[idx] == False:
+            candis[n] = idx
             n += 1
     return n
+    
 
-
-def backtrack(arr, y, N):
-    global min_
-    c = [0] * N     # 노드들의 value
-
+def backtrack(x_idx, y, N, sum_):
+    global arr, min_
+    candis = [0] * N        # index가 들어감
+    
+    # if y == N-1:
     if y == N:
-        if sum(c) < min_:
-            min_ = sum(c)
-        # sum이 들어올 곳
-        # sum < minvalue: minvalue = sum 업데이트
-        # for i in range(1, y+1):
-        #     print(c)
+        if sum_ < min_:
+            min_ = sum_
+    
     else:
         y += 1
-        # 다음 자식 노드를 찾음
-        n = find_next(arr, y, N, c)
-        # 자식 노드를 돌면서
+        n = candidates(x_idx, y, N, candis)
 
-        for i in range(n):
-            # 다음 자식 노드들을 데리고 backtracking을 이어서 함 - sum이 계속 누적되어서 가야함
-            if sum(c) > min_:
-                return
-            backtrack(arr, y, N)
-
+        if sum_ < min_:
+            for i in range(n):
+                x_idx[y] = candis[i]
+                backtrack(x_idx, y, N, sum_+arr[y-1][x_idx[y]])
 
 
 for _ in range(int(input())):
     N = int(input())
     arr = [list(map(int, input().split())) for i in range(N)]
     min_ = 100
-    backtrack([0], 0, N)
-    break
+    # x_idx = [-1] * (N)
+    x_idx = [0] * (N+1)
+    # backtrack(x_idx, -1, N, 0)
+    backtrack(x_idx, 0, N, 0)
+    print(f'#{_+1} {min_}')
+    # break
 
 

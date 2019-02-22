@@ -128,7 +128,7 @@ $ cd <name for project>
 $ pyenv virtualenv <python version> <virtual environment name for setting>
 $ pyenv local <virtual environment name for setting>
 $ pip install django
-$ django-admin startproject <name for project>
+$ django-admin startproject <name for project> <path for project>
 ```
 
 
