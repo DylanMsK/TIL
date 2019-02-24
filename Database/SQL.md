@@ -59,6 +59,8 @@
 | ---- | ---------- | --------- | ---- | ------- | ------------- |
 | 1    | 민수       | 강        | 28   | 서울    | 010-1234-5678 |
 
+
+
 #### 1. Hello, World! Hello, SQL!
 
 ```bash
@@ -76,6 +78,8 @@ id		first_name		last_name		age		country		phone
 ----------	----------	----------	----------	----------	----------
 1			민수			강			28			서울			010-1234-5678
 ```
+
+
 
 #### 2. DB, Table 생성
 
@@ -136,6 +140,8 @@ sqlite> .tables
   age INT,
   address TEXT);
   ```
+
+
 
 #### 3. 데이터 추가, 읽기, 수정, 삭제
 
@@ -229,4 +235,92 @@ sqlite> .tables
    sqlite> UPDATE classmates SET name='홍길동', address="제주도" WHERE id=4;
    ```
 
-   
+
+
+#### 4. Where, expression
+
+```sql
+SELECT * FROM table
+WHERE condition
+```
+1. Where
+
+   Quiz 1. users에서 age가 30 이상인 사람만 가져온다면?
+   ```bash
+   sqlite> SELECT * FROM users WHERE age >= 30;
+   ```
+
+   Quiz 2. users에서 age가 30 이상인 사람의 이름만 가져온다면?
+   ```bash
+   sqlite> SELECT first_name FROM users WHERE age >= 30;
+   ```
+
+   Quiz 3. users에서 age가 30 이상이고 성이 김인 사람의 성과 나이만 가져온다면?
+   ```bash
+   sqlite> SELECT last_name, age, FROM users WHERE last_name = '김' and age >= 30;
+   ```
+
+2. Expression
+```sql
+SELECT EXP(column) FROM table
+```
+   Quiz 1. users의 총 갯수는?
+   ```bash
+   sqlite> SELECT COUNT(*) FROM users;
+   ```
+
+   Quiz 2. users에서 계좌 잔액(balance)이 가장 높은 사람과 액수는?
+   ```bash
+   sqlite> SELECT first_name, MAX(balance) FROM users;
+   ```
+
+   Quiz 3. users에서 30살 이상인 사람의 계좌 평균 잔액은?
+   ```bash
+   sqlite> SELECT AVG(balance) FROM users WHERE age >= 30;
+   ```
+
+   Quiz 4. users에서 20대인 사람의 테이블은?
+   ```bash
+   sqlite> SELECT * FROM users WHERE age LIKE '2%';
+   ```
+
+3. Like
+정확한 값에 대한 비교가 아닌, 패턴을 확인하여 해당하는 값을 반환한다
+```sql
+SELECT * FROM table
+WHERE column Like ''
+```
+
+| Expression | SQL       | Meaning                                            |
+| ---------- | --------- | -------------------------------------------------- |
+| %          | %2        | 2로 시작하는 값                                    |
+|            | 2%        | 2로 끝나는 값                                      |
+|            | %2%       | 2가 들어가는 값                                    |
+| _          | _2%       | 아무값이나 들어가고 <br />두번째가 2로 시작하는 값 |
+|            | 1\_\_\_\_ | 1로 시작하고 4자리인 값                            |
+|            | '2\_%\_%' | 2로 시작하고 적어도 3자리인 값                     |
+
+
+
+#### 5. ORDER
+
+1. 정렬(ORDER)
+```sql
+SELECT columns FROM table
+ORDER BY column1, column2 [ASC|DESC]
+```
+
+   Quiz 1. users에서 나이순으로 오름차순 정렬하여 상위 10개만 뽑아보면?
+   ```bash
+   sqlite> SELECT * FROM users ORDER BY age ASC LIMIT 10;
+   ```
+
+   Quiz 2. users에서 나이순, 성 순으로 오름차순 정렬하여 상위 10개만 뽑아보면?
+   ```bash
+   sqlite> SELECT * FROM users ORDER BY age, last_name ASC LIMIT 10;
+   ```
+
+   Quiz 3. users에서 계좌잔액순으로 내림차순 정렬하여 해당하는 사람이름 10개만 뽑아보면?
+   ```bash
+   sqlite> SELECT first_name, last_name FROM users ORDER BY balance DESC LIMIT 10;
+   ```
