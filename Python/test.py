@@ -28,27 +28,3 @@
 
 # print(combination([5, 6, 7, 8, 9], 3))
 
-
-arr = [i for i in range(1, 11)]
-result = []
-def powerset(arr, k):
-    def backtrack(chosen):
-        global cnt
-        cnt += 1
-        if sum(chosen) > k:
-            return
-        elif sum(chosen) == k:
-            result.append(chosen[::])
-            return
-        else:
-            start = arr.index(chosen[-1])+1 if chosen else 0
-            for idx in range(start, len(arr)):
-                chosen.append(arr[idx])
-                backtrack(chosen)
-                chosen.pop()
-            return chosen
-    backtrack([])
-
-cnt = 0
-powerset(arr, 10)
-print(result, cnt)

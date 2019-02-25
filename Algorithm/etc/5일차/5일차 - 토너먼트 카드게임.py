@@ -22,19 +22,25 @@ def grouping(lst):
     if len(lst) == 2:
         winner = win(lst[0], lst[1])
         return winner
-    if len(lst) == 1:
+
+    elif len(lst) == 1:
         return lst[0]
-    i = 1
-    j = len(lst)
-    if len(lst) % 2 == 0:
-        group1 = lst[:(i+j)//2]
-        group2 = lst[(i+j)//2:]
+
     else:
-        group1 = lst[:(i+j)//2]
-        group2 = lst[(i+j)//2:]
-    group1 = grouping(group1)
-    group2 = grouping(group2)
-    return win(group1, group2)
+        i = 1
+        j = len(lst)
+
+        if len(lst) % 2 == 0:
+            group1 = lst[:(i+j)//2]
+            group2 = lst[(i+j)//2:]
+
+        else:
+            group1 = lst[:(i+j)//2]
+            group2 = lst[(i+j)//2:]
+
+        group1 = grouping(group1)
+        group2 = grouping(group2)
+        return win(group1, group2)
 
 for _ in range(int(input())):
     N = int(input())

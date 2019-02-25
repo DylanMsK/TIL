@@ -5,9 +5,7 @@
 def candidates(x_idx, nxt_y, N, candis):
     visited = [False] * N
 
-    # for idx in range(nxt_y):
     for idx in range(1, nxt_y):
-        # if x_idx[idx] == -1:
         visited[x_idx[idx]] = True
     
     n = 0
@@ -22,7 +20,6 @@ def backtrack(x_idx, y, N, sum_):
     global arr, min_
     candis = [0] * N        # index가 들어감
     
-    # if y == N-1:
     if y == N:
         if sum_ < min_:
             min_ = sum_
