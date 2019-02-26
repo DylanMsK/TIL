@@ -1,7 +1,7 @@
 # url = 'https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV15B1cKAKwCFAYD&categoryId=AV15B1cKAKwCFAYD&categoryType=CODE'
 
 import sys
-sys.stdin = open('C:\\Users\\student\\Desktop\\github\\TIL\\Algorithm\\etc\\6일차\\Contact_input.txt', 'r')
+sys.stdin = open('Contact_input.txt', 'r')
 
 for _ in range(10):
     tot, start = map(int, input().split())
@@ -15,16 +15,15 @@ for _ in range(10):
             emg_dict[lst[i]] = [lst[i+1]]
 
     visited = []
-    count = []
+    idx = 0
     q = [start]
     while 1:
-        count.append(q)
+        max_ = max(q)
         for i in q:
             if i in visited:
                 continue
             else:
                 visited.append(i)
-
         temp = []
         for i in q:
             if i in emg_dict:
@@ -33,9 +32,9 @@ for _ in range(10):
                         temp.append(j)
             else:
                 continue
-        
+
         q = temp[::]
         if not temp:
             break
 
-    print(f'#{_+1} {max(count[-1])}')
+    print(f'#{_+1} {max_}')

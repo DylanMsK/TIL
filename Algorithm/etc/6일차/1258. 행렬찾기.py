@@ -6,7 +6,6 @@ sys.stdin = open('C:\\Users\\student\\Desktop\\github\\TIL\\Algorithm\\etc\\6일
 for _ in range(int(input())):
     n = int(input())
     arr = [list(map(int, input().split())) for i in range(n)]
-    cnt = 0
     arrays = []
     flag = True
     while flag:
@@ -21,7 +20,6 @@ for _ in range(int(input())):
                 break
 
         if flag:
-            cnt += 1
             dx = dy = 0
             for y in range(lt[0], n):
                 if arr[y][lt[1]] == 0:
@@ -39,10 +37,6 @@ for _ in range(int(input())):
 
             arrays.append((dy, dx))
 
-    arrays = sorted(sorted(arrays, key=lambda x: x[0]), key=lambda x: x[0]*x[1])
-    result = []
-    for i in arrays:
-        result.append(str(i[0]))
-        result.append(str(i[1]))
+    arrays = sorted(arrays, key=lambda x: (x[0]*x[1], x[0]))
 
-    print(f'#{_+1} {cnt} {" ".join(result)}')
+    print(f'#{_+1} {len(arrays)} {" ".join([str(j) for i in arrays for j in i])}')
