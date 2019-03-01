@@ -81,7 +81,7 @@ class LinkedList:
 
         return self.current.data
 
-    def sizz(self):
+    def size(self):
         return self.num_of_date
 
 
