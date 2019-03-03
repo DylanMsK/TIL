@@ -2,4 +2,5 @@
 
 
 for _ in range(int(input())):
+    
     print(f'#{_+1}')

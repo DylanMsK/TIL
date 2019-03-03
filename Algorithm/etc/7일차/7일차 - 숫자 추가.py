@@ -23,7 +23,6 @@ class LinkedList:
 
         self.num_of_date += 1
 
-
     def search(self, idx):
         self.current = self.head
         temp = 0

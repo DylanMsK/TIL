@@ -35,13 +35,6 @@ class LinkedList:
 
         self.num_of_data = 0
 
-    def first(self):
-        if self.num_of_data == 0:
-            return None
-        
-        # self.before = self.head
-        self.current = self.head.next
-        return self.current.data
 
     def append(self, data):
         new_node = Node(data)
@@ -75,6 +68,40 @@ class LinkedList:
         self.current = self.current.next
         return self.current.data
 
+    def first(self):
+        if self.num_of_data == 0:
+            return None
+        
+        # self.before = self.head
+        self.current = self.head.next
+        return self.current.data
+
+    def search(self, idx):
+        self.current = self.head
+        temp = 0
+        while temp <= idx:
+            self.current = self.current.next
+            temp += 1
+        
+        return self.current.data
+
+    # def last(self):
+    #     self.before = self.head
+    #     self.current = self.head.next
+
+    #     temp = 0
+    #     while temp < self.num_of_data:
+    #         self.current = self.current.next
+    #         self.before = self.current
+
+    #     return self.current.data
+
+
+    # def before(self):
+    #     self.current = self.before
+
+
+
     def size(self):
         return self.num_of_data
 
@@ -105,11 +132,16 @@ for _ in range(int(input())):
                     l_lst.add(idx, j)
                     idx += 1
     
-    l_lst.first()
-    temp = []
-    for i in range(l_lst.size()):
-        temp.append(l_lst.data())
-        l_lst.next()
-    temp = temp[-10:]
+    # l_lst.first()
+    # temp = []
+    # for i in range(l_lst.size()):
+    #     temp.append(l_lst.data())
+    #     l_lst.next()
+    # temp = temp[-10:]
 
-    print(f'#{_+1} {" ".join([str(i) for i in temp[::-1]])}')
+    nums = l_lst.size()
+    temp = []
+    for i in range(nums-1, nums-11, -1):
+        temp.append(l_lst.search(i))
+
+    print(f'#{_+1} {" ".join([str(i) for i in temp])}')
