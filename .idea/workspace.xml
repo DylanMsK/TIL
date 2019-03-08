@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b994764-20ef-435e-991e-03176720e550" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Algorithm/etc/10일차/Ladder2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm/etc/11일차/간단한 압축 풀기.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm/etc/11일차/두 개의 숫자열.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm/etc/11일차/어디에 단어가 들어갈 수 있을까.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm/etc/11일차/추억의 2048게임.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,58 +18,51 @@
     <session id="-964995574">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.2" value="3" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.open.time.2" value="4" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="py" value="37" />
+          <entry key="py" value="41" />
+          <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="37" />
+          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="Python" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
           <entry key="gitignore" value="11" />
-          <entry key="py" value="19490" />
+          <entry key="py" value="24837" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="19" />
-          <entry key="Python" value="19490" />
+          <entry key="PLAIN_TEXT" value="20" />
+          <entry key="Python" value="24837" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Algorithm/KOI/XXXX2001/XXXX2629. 양팔저울.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Algorithm/etc/10일차/Ladder2.py">
+        <entry file="file://$PROJECT_DIR$/Algorithm/etc/11일차/추억의 2048게임.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="665">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="57">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
               <folding>
-                <marker date="1551949106164" expanded="true" signature="172:635" ph="..." />
-                <marker date="1551949106164" expanded="true" signature="172:637" ph="..." />
+                <marker date="1552031803305" expanded="true" signature="1448:2756" ph="..." />
               </folding>
             </state>
           </provider>
@@ -120,12 +116,16 @@
         <option value="$PROJECT_DIR$/Algorithm/KOI/2001/2629. 양팔저울.py" />
         <option value="$PROJECT_DIR$/Algorithm/etc/10일차/의석이의 세로로 말해요.py" />
         <option value="$PROJECT_DIR$/Algorithm/etc/10일차/Ladder2.py" />
+        <option value="$PROJECT_DIR$/Algorithm/etc/11일차/간단한 압축 풀기.py" />
+        <option value="$PROJECT_DIR$/Algorithm/etc/11일차/두 개의 숫자열.py" />
+        <option value="$PROJECT_DIR$/Algorithm/etc/11일차/어디에 단어가 들어갈 수 있을까.py" />
+        <option value="$PROJECT_DIR$/Algorithm/etc/11일차/추억의 2048게임.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="141" />
-    <option name="y" value="-17" />
+    <option name="x" value="346" />
+    <option name="y" value="201" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -153,7 +153,14 @@
               <item name="TIL" type="b2602c69:ProjectViewProjectNode" />
               <item name="TIL" type="462c0819:PsiDirectoryNode" />
               <item name="Algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="SW Expert Academy" type="462c0819:PsiDirectoryNode" />
+              <item name="etc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TIL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TIL" type="462c0819:PsiDirectoryNode" />
+              <item name="Algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="etc" type="462c0819:PsiDirectoryNode" />
+              <item name="11일차" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -163,6 +170,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/student/Desktop/github/TIL/Algorithm/etc/11일차/input.txt" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -187,8 +195,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Ladder2">
-    <configuration name="재미있는 오셀로 게임" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.추억의 2048게임">
+    <configuration name="어디에 단어가 들어갈 수 있을까" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -196,11 +204,53 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Algorithm/etc/10일차" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Algorithm/etc/11일차" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm/etc/10일차/재미있는 오셀로 게임.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm/etc/11일차/어디에 단어가 들어갈 수 있을까.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="간단한 압축 풀기" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="TIL" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Algorithm/etc/11일차" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm/etc/11일차/간단한 압축 풀기.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="두 개의 숫자열" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="TIL" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Algorithm/etc/11일차" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm/etc/11일차/두 개의 숫자열.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -230,7 +280,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="파스칼의 삼각형" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="추억의 2048게임" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -238,11 +288,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Algorithm/etc/9일차" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Algorithm/etc/11일차" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm/etc/9일차/파스칼의 삼각형.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm/etc/11일차/추억의 2048게임.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -264,27 +314,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm/etc/10일차/파리 퇴치.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="2628. 종이자르기" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="TIL" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Algorithm/KOI/2001" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm/KOI/2001/2628. 종이자르기.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -315,19 +344,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.파스칼의 삼각형" />
-      <item itemvalue="Python.재미있는 오셀로 게임" />
-      <item itemvalue="Python.2628. 종이자르기" />
-      <item itemvalue="Python.의석이의 세로로 말해요" />
       <item itemvalue="Python.Ladder2" />
+      <item itemvalue="Python.간단한 압축 풀기" />
+      <item itemvalue="Python.두 개의 숫자열" />
+      <item itemvalue="Python.어디에 단어가 들어갈 수 있을까" />
+      <item itemvalue="Python.추억의 2048게임" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.추억의 2048게임" />
+        <item itemvalue="Python.어디에 단어가 들어갈 수 있을까" />
+        <item itemvalue="Python.두 개의 숫자열" />
+        <item itemvalue="Python.간단한 압축 풀기" />
         <item itemvalue="Python.Ladder2" />
-        <item itemvalue="Python.의석이의 세로로 말해요" />
-        <item itemvalue="Python.2628. 종이자르기" />
-        <item itemvalue="Python.재미있는 오셀로 게임" />
-        <item itemvalue="Python.파스칼의 삼각형" />
       </list>
     </recent_temporary>
   </component>
@@ -351,9 +380,9 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3767644" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995657" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32899022" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31378937" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3061889" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -368,6 +397,17 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://C:/Program Files/Python35/Lib/codecs.py">
@@ -567,7 +607,7 @@
     <entry file="file://$PROJECT_DIR$/Algorithm/KOI/XXXX2001/XXXX2629. 양팔저울.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -575,9 +615,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
           <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm/etc/11일차/어디에 단어가 들어갈 수 있을까.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="33" selection-end-column="36" />
           <folding>
-            <marker date="1551949106164" expanded="true" signature="172:635" ph="..." />
-            <marker date="1551949106164" expanded="true" signature="172:637" ph="..." />
+            <marker date="1552019678076" expanded="true" signature="462:611" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm/etc/11일차/두 개의 숫자열.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm/etc/11일차/간단한 압축 풀기.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm/etc/11일차/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="41" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm/etc/11일차/추억의 2048게임.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <marker date="1552031803305" expanded="true" signature="1448:2756" ph="..." />
           </folding>
         </state>
       </provider>
