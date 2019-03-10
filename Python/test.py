@@ -29,37 +29,49 @@
 # print(combination([5, 6, 7, 8, 9], 3))
 
 
-def merge(left, right):
-    result = []
+# def merge(left, right):
+#     result = []
 
-    while len(left) > 0 and len(right) > 0:
-        if left[0] > right[0]:
-            result.append(right.pop(0))
-        else:
-            result.append(left.pop(0))
+#     while len(left) > 0 and len(right) > 0:
+#         if left[0] > right[0]:
+#             result.append(right.pop(0))
+#         else:
+#             result.append(left.pop(0))
     
-    if len(left) > 0:
-        result += left
-    if len(right) > 0:
-        result += right
+#     if len(left) > 0:
+#         result += left
+#     if len(right) > 0:
+#         result += right
 
-    return result
-
-
-def merge_sort(lst):
-    if len(lst) <= 1:
-        return lst
-
-    mid = len(lst) // 2
-    left = lst[:mid]
-    right = lst[mid:]
-
-    left = merge_sort(left)
-    right = merge_sort(right)
-
-    return merge(left, right)
+#     return result
 
 
-lst = [69, 10, 30, 2, 16, 8, 31, 22]
+# def merge_sort(lst):
+#     if len(lst) <= 1:
+#         return lst
 
-print(merge_sort(lst))
+#     mid = len(lst) // 2
+#     left = lst[:mid]
+#     right = lst[mid:]
+
+#     left = merge_sort(left)
+#     right = merge_sort(right)
+
+#     return merge(left, right)
+
+
+# lst = [69, 10, 30, 2, 16, 8, 31, 22]
+
+# print(merge_sort(lst))
+
+
+lst = [1, 2, 3, 4, 5]
+
+n = len(lst)
+
+for i in range(1 << n):
+    temp = []
+    for j in range(n+1):
+        if i & 1 << j:
+            temp.append(lst[j])
+    print(temp)
