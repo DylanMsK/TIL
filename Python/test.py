@@ -65,13 +65,16 @@
 # print(merge_sort(lst))
 
 
-lst = [1, 2, 3, 4, 5]
+def binary(string):
 
-n = len(lst)
+    lst = []    
+    for i in range(0, len(string), 7):
+        temp = 0
+        for p, j in enumerate(range(6, -1, -1)):
+            if string[i + j] == '1':
+                temp += 2 ** p
+        lst.append(temp)
+    return lst    
 
-for i in range(1 << n):
-    temp = []
-    for j in range(n+1):
-        if i & 1 << j:
-            temp.append(lst[j])
-    print(temp)
+string = '00000010001101'
+print(binary(string))
