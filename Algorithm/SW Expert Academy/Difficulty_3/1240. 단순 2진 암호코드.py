@@ -4,11 +4,18 @@ sys.stdin = open('input.txt', 'r')
 
 
 def decode(binary):
+    if '1' not in binary:
+        return None
     result = []
-    for i in range(0, len(binary), 7):
-        if binary[i:i+7] in nums:
-            result.append(nums.index(binary[i:i+7]))
-    return result
+    idx = 0
+    for i in range(len(binary)-1, -1, -1):
+        if binary[i] == '1':
+            idx = i+1
+            break
+    for i in range(idx, -1, -7):
+        if binary[i-7:i] in nums:
+            result.append(nums.index(binary[i-7:i]))
+    return result[::-1]
 
 
 nums = ['0001101', '0011001', '0010011', '0111101', '0100011', '0110001', '0101111', '0111011', '0110111', '0001011']
@@ -17,27 +24,19 @@ for _ in range(int(input())):
     code = []
     for i in range(N):
         row = input()
-        print(row)
         if code:
             continue
-        temp = decode(row)
-        if temp:
-            code = temp[:]
+        code = decode(row)
     result = 0
-    print(code)
-    if len(code) != 8:
-        pass
-    else:
-        even = 0
-        odd = 0
-        for i in range(8):
-            if i % 2:
-                odd += code[i]
-            else:
-                even += code[i]
-        if not (odd + 3*even) % 10:
-            result = odd + even
+    even = 0
+    odd = 0
+    for i in range(8):
+        if i % 2:
+            odd += code[i]
+        else:
+            even += code[i]
+    if not (odd + 3*even) % 10:
+        result = odd + even
 
     print(f'#{_+1} {result}')
-    break
 
