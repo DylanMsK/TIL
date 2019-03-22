@@ -1,0 +1,67 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+    <h1>Todo List</h1>
+    <form action="{% url 'todos:create' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <input name="content" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">만들기</button>
+        </div>
+    </form>
+    <h3>미완료된일</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">No.</th>
+            <th scope="col">내용</th>
+            <th scope="col">체크</th>
+            <th scope="col">삭제</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for todo in todos %}
+            <tr>
+                {% if not todo.completed %}
+                    <th scope="row">{{ todo.user }}</th>
+                    <td>{{ todo.content }}</td>
+                    <td>
+                        <button class="btn btn-dark"><a href="{% url 'todos:check' todo.id %}"
+                                                        class="text-white">체크</a>
+                        </button>
+                    </td>
+                    <td><a href="{% url 'todos:delete' todo.id %}">삭제</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h3>완료된 일</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">No.</th>
+            <th scope="col">내용</th>
+            <th scope="col">체크</th>
+            <th scope="col">삭제</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for todo in todos %}
+            <tr>
+                {% if todo.completed %}
+                    <th scope="row">{{ todo.user }}</th>
+                    <td><strike>{{ todo.content }}</strike></td>
+                    <td>
+                        <button class="btn btn-dark"><a href="{% url 'todos:check' todo.id %}"
+                                                        class="text-white">체크해제</a></button>
+                    </td>
+                    <td><a href="{% url 'todos:delete' todo.id %}">삭제</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

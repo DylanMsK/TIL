@@ -1,0 +1,14 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+{% if request.resolver_match.url_name == 'create' %}
+    <h1>문의 작성</h1>
+{% else %}
+    <h1>문의 수정</h1>
+{% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_ul}}
+        <input type="submit">
+    </form>
+{% endblock %}
