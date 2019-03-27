@@ -65,16 +65,93 @@
 # print(merge_sort(lst))
 
 
-def binary(string):
+# def binary(string):
 
-    lst = []    
-    for i in range(0, len(string), 7):
-        temp = 0
-        for p, j in enumerate(range(6, -1, -1)):
-            if string[i + j] == '1':
-                temp += 2 ** p
-        lst.append(temp)
-    return lst    
+#     lst = []    
+#     for i in range(0, len(string), 7):
+#         temp = 0
+#         for p, j in enumerate(range(6, -1, -1)):
+#             if string[i + j] == '1':
+#                 temp += 2 ** p
+#         lst.append(temp)
+#     return lst    
 
-string = '00000010001101'
-print(binary(string))
+# string = '00000010001101'
+# print(binary(string))
+
+# lst = list(range(1, 11))
+
+# for i in range(1 << 10):
+#     temp = []
+#     for j in range(10):
+#         if i & 1 << j:
+#             temp.append(lst[j])
+#     if sum(temp) == 10:
+#         print(temp)
+
+
+
+# def backtrack(ary, k, n, sum_):
+#     if sum_ > 10:
+#         return
+
+#     if k == n:
+#         if sum_ == 10:
+#             for i in range(n):
+#                 if chk[i]:
+#                     print(ary[i], end=' ')
+#             print()
+#         return
+    
+#     k += 1
+
+#     chk[k-1] = 1
+#     backtrack(ary, k, n, sum_+ary[k-1])
+#     chk[k-1] = 0
+#     backtrack(ary, k, n, sum_)
+
+# arr = list(range(1, 11))
+# chk = [0] * 10
+# backtrack(arr, 0, 10, 0)
+aaa = '1 2 1 3 2 4 3 5 3 6 4 7 5 8 5 9 6 10 6 11 7 12 11 13'
+
+def pre_order(node):
+    print(node, end=' ')
+    if edge[node][0]:
+        pre_order(edge[node][0])
+    if edge[node][1]:
+        pre_order(edge[node][1])
+
+def in_order(node):
+    if edge[node][0]:
+        pre_order(edge[node][0])
+    print(node, end=' ')
+    if edge[node][1]:
+        pre_order(edge[node][1])
+
+def post_order(node):
+    if edge[node][0]:
+        pre_order(edge[node][0])
+    if edge[node][1]:
+        pre_order(edge[node][1])
+    print(node, end=' ')
+
+
+N = int(input())
+lst = list(map(int, input().split()))
+edge = [[0, 0] for _ in range(N+2)]
+
+for i in range(0, 2*N, 2):
+    if edge[lst[i]][0]:
+        edge[lst[i]][1] = lst[i+1]
+    else:
+        edge[lst[i]][0] = lst[i+1]
+
+print('---pre_order---')
+pre_order(1)
+print()
+print('---in_order---')
+in_order(1)
+print()
+print('---post_order---')
+post_order(1)
