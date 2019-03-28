@@ -4,16 +4,16 @@ for _ in range(int(input())):
 
     sum_ = sum(lst)
     for i in range(1 << N):
-        temp_sum = 0
+        temp = 0
         for j in range(N):
             if i & 1 << j:
-                temp_sum += lst[j]
-        if temp_sum >= B:
-            if temp_sum == B:
-                sum_ = temp_sum
+                temp += lst[j]
+        if temp >= B:
+            if temp == B:
+                sum_ = temp
                 break
-            elif temp_sum < sum_:
-                sum_ = temp_sum
+            elif temp < sum_:
+                sum_ = temp
     print(f'#{_+1} {sum_ - B}')
     
 

@@ -155,3 +155,25 @@ in_order(1)
 print()
 print('---post_order---')
 post_order(1)
+
+
+
+
+for _ in range(int(input())):
+    N, M = map(int, input().split())
+    lst = []
+    for i in range(N):
+        lst.append(int(input()))
+
+    temp = lst[:]
+    time = 0
+    while M > 0:
+        min_ = min(temp)
+        time += min_
+        M -= temp.count(min_)
+        # print(temp, M, time)
+        for i in range(N):
+            temp[i] -= min_
+            if temp[i] == 0:
+                temp[i] = lst[i]
+    print(f'#{_+1} {time}')
