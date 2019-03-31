@@ -24,7 +24,6 @@ def backtrack(work, tot, visited):
                 orders[i] = 0
 
 
-
 for _ in range(int(input())):
     N = int(input())
     init = list(map(int, input().split()))
