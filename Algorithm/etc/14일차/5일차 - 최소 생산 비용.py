@@ -18,11 +18,11 @@ def backtrack(v, sum_):
                 visited[i] = 0
 
 
-for _ in range(int(input())):
+for tc in range(int(input())):
     N = int(input())
-    arr = [list(map(int, input().split())) for i in range(N)]
+    arr = [list(map(int, input().split())) for _ in range(N)]
 
     min_ = 99 * N
     visited = [0] * N
     backtrack(-1, 0)
-    print(f'#{_+1} {min_}')
+    print('#{} {}'.format(tc+1, min_))

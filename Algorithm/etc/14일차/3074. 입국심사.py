@@ -17,11 +17,11 @@ for _ in range(int(input())):
         if sum_ == M:
             break
         elif sum_ > M:
-            r = m
+            r = m-1
         else:
-            l = m
-            if r - l == 1:
-                m = r
-                break
-    print(f'#{_+1} {m}')
+            l = m+1
+
+        if r - l == 1:
+            break
+    print('#{} {}'.format(_+1, m))
     

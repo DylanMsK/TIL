@@ -113,67 +113,105 @@
 # arr = list(range(1, 11))
 # chk = [0] * 10
 # backtrack(arr, 0, 10, 0)
-aaa = '1 2 1 3 2 4 3 5 3 6 4 7 5 8 5 9 6 10 6 11 7 12 11 13'
+# aaa = '1 2 1 3 2 4 3 5 3 6 4 7 5 8 5 9 6 10 6 11 7 12 11 13'
 
-def pre_order(node):
-    print(node, end=' ')
-    if edge[node][0]:
-        pre_order(edge[node][0])
-    if edge[node][1]:
-        pre_order(edge[node][1])
+# def pre_order(node):
+#     print(node, end=' ')
+#     if edge[node][0]:
+#         pre_order(edge[node][0])
+#     if edge[node][1]:
+#         pre_order(edge[node][1])
 
-def in_order(node):
-    if edge[node][0]:
-        pre_order(edge[node][0])
-    print(node, end=' ')
-    if edge[node][1]:
-        pre_order(edge[node][1])
+# def in_order(node):
+#     if edge[node][0]:
+#         pre_order(edge[node][0])
+#     print(node, end=' ')
+#     if edge[node][1]:
+#         pre_order(edge[node][1])
 
-def post_order(node):
-    if edge[node][0]:
-        pre_order(edge[node][0])
-    if edge[node][1]:
-        pre_order(edge[node][1])
-    print(node, end=' ')
+# def post_order(node):
+#     if edge[node][0]:
+#         pre_order(edge[node][0])
+#     if edge[node][1]:
+#         pre_order(edge[node][1])
+#     print(node, end=' ')
 
 
-N = int(input())
-lst = list(map(int, input().split()))
-edge = [[0, 0] for _ in range(N+2)]
+# N = int(input())
+# lst = list(map(int, input().split()))
+# edge = [[0, 0] for _ in range(N+2)]
 
-for i in range(0, 2*N, 2):
-    if edge[lst[i]][0]:
-        edge[lst[i]][1] = lst[i+1]
+# for i in range(0, 2*N, 2):
+#     if edge[lst[i]][0]:
+#         edge[lst[i]][1] = lst[i+1]
+#     else:
+#         edge[lst[i]][0] = lst[i+1]
+
+# print('---pre_order---')
+# pre_order(1)
+# print()
+# print('---in_order---')
+# in_order(1)
+# print()
+# print('---post_order---')
+# post_order(1)
+
+
+
+
+# for _ in range(int(input())):
+#     N, M = map(int, input().split())
+#     lst = []
+#     for i in range(N):
+#         lst.append(int(input()))
+
+#     temp = lst[:]
+#     time = 0
+#     while M > 0:
+#         min_ = min(temp)
+#         time += min_
+#         M -= temp.count(min_)
+#         # print(temp, M, time)
+#         for i in range(N):
+#             temp[i] -= min_
+#             if temp[i] == 0:
+#                 temp[i] = lst[i]
+#     print(f'#{_+1} {time}')
+
+def dfs(node, visited):
+    visited.append(node)
+    if node in edge:
+        for i in edge[node]:
+            if i not in visited:
+                dfs(i, visited)
+
+
+def bfs(node, visited):
+    q = [node]
+
+    while q:
+        nxt = q.pop(0)
+        visited.append(nxt)
+        if nxt in edge:
+            for i in edge[nxt]:
+                if i in visited+q:
+                    continue
+                q.append(i)
+        # print(visited)
+
+init = '1 2 1 3 2 4 2 5 4 6 5 6 6 7 3 7'
+init = list(map(int, init.split(' ')))
+edge = {}
+for i in range(0, len(init), 2):
+    if init[i] in edge:
+        edge[init[i]].append(init[i+1])
     else:
-        edge[lst[i]][0] = lst[i+1]
-
-print('---pre_order---')
-pre_order(1)
-print()
-print('---in_order---')
-in_order(1)
-print()
-print('---post_order---')
-post_order(1)
+        edge[init[i]] = [init[i+1]]
+        
+visited = []
+# dfs(1, visited)
+bfs(1, visited)
+print(visited)
 
 
 
-
-for _ in range(int(input())):
-    N, M = map(int, input().split())
-    lst = []
-    for i in range(N):
-        lst.append(int(input()))
-
-    temp = lst[:]
-    time = 0
-    while M > 0:
-        min_ = min(temp)
-        time += min_
-        M -= temp.count(min_)
-        # print(temp, M, time)
-        for i in range(N):
-            temp[i] -= min_
-            if temp[i] == 0:
-                temp[i] = lst[i]
-    print(f'#{_+1} {time}')
