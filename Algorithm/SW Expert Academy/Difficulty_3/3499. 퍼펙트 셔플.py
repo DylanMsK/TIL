@@ -4,12 +4,15 @@ for tc in range(int(input())):
     N = int(input())
     lst = input().split()
     if N % 2:
-        m = N // 2
-        for i in range(1, N, 2):
-            lst[i], lst[i+m] = lst[i+m], lst[i]
+        a, b = lst[:N//2+1], lst[N//2+1:]
     else:
-        m = N // 2
-        for i in range(1, N+1, 2):
-            print(lst)
-            lst[i], lst[i-1+m] = lst[i-1+m], lst[i]
-    # print(f'#{tc+1} {lst}')
+        a, b = lst[:N//2], lst[N//2:]
+    res = []
+    while len(a) > 0 and len(b) > 0:
+        res.append(a.pop(0))
+        res.append(b.pop(0))
+    if len(a):
+        res += a
+    else:
+        res += b
+    print('#{} {}'.format(tc+1, ' '.join(res)))
