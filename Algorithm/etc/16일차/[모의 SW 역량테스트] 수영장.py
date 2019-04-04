@@ -1,6 +1,9 @@
 def dfs(month, sum_, buy):
     global min_, d1, m1, m3
 
+    if sum_ > min_:
+        return
+
     if month > 11:
         if sum_ < min_:
             min_ = sum_
@@ -21,21 +24,5 @@ for tc in range(int(input())):
     days = list(map(int, input().split()))
     min_ = y1
     dfs(0, 0, [])
-
-    # day = 0
-    # q = []
-    # while day != 11:
-    #     if days[day]:
-    #         if q:
-    #             nxt = []
-    #             while q:
-    #                 temp = q.pop(0)
-    #                 nxt += [temp, temp+(d1*days[day]), temp+m1, temp+m3]
-    #         else:
-    #             q += [d1*days[day], m1, m3]
-    #     days += 1
-
-
-
 
     print(f'#{tc+1} {min_}')

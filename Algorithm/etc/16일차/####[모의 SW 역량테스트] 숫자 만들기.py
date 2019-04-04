@@ -19,7 +19,7 @@ for tc in range(int(input())):
     N = int(input())
 
     op_nums = list(map(int, input().split()))
-    operators = get_operator(op_nums)
+    operator s = get_operator(op_nums)
 
     nums = list(map(int, input().split()))
     # result = []
