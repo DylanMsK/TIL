@@ -14,8 +14,6 @@ def dfs(month, sum_, buy):
     else:
         dfs(month+1, sum_+(d1*days[month]), buy+[d1])
         dfs(month+1, sum_+m1, buy+[m1])
-        dfs(month+1, sum_+m3, buy+[m3])
-        dfs(month+2, sum_+m3, buy+[m3])
         dfs(month+3, sum_+m3, buy+[m3])
 
 
