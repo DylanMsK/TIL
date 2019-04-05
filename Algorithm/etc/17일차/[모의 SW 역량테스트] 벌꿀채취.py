@@ -1,5 +1,5 @@
-import sys
-sys.stdin = open('input.txt', 'r')
+# import sys
+# sys.stdin = open('input.txt', 'r')
 
 def get_ggul(tong, C):
     max_ = 0
@@ -40,4 +40,4 @@ for tc in range(int(input())):
             else:
                 continue
 
-    print(f'#{tc+1} {max_}')
+    print('#{} {}'.format(tc+1, max_))
