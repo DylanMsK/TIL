@@ -178,40 +178,14 @@
 #                 temp[i] = lst[i]
 #     print(f'#{_+1} {time}')
 
-def dfs(node, visited):
-    visited.append(node)
-    if node in edge:
-        for i in edge[node]:
-            if i not in visited:
-                dfs(i, visited)
-
-
-def bfs(node, visited):
-    q = [node]
-
-    while q:
-        nxt = q.pop(0)
-        visited.append(nxt)
-        if nxt in edge:
-            for i in edge[nxt]:
-                if i in visited+q:
-                    continue
-                q.append(i)
-        # print(visited)
-
-init = '1 2 1 3 2 4 2 5 4 6 5 6 6 7 3 7'
-init = list(map(int, init.split(' ')))
-edge = {}
-for i in range(0, len(init), 2):
-    if init[i] in edge:
-        edge[init[i]].append(init[i+1])
+def permute(list, s):
+    if list == 1:
+        return s
     else:
-        edge[init[i]] = [init[i+1]]
-        
-visited = []
-# dfs(1, visited)
-bfs(1, visited)
-print(visited)
+        return [ y + x
+                 for y in permute(1, s)
+                 for x in permute(list - 1, s)
+                 ]
 
-
-
+print(permute(1, ["a","b","c"]))
+print(permute(2, ["a","b","c"]))
