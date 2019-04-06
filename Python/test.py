@@ -178,14 +178,54 @@
 #                 temp[i] = lst[i]
 #     print(f'#{_+1} {time}')
 
-def permute(list, s):
-    if list == 1:
-        return s
-    else:
-        return [ y + x
-                 for y in permute(1, s)
-                 for x in permute(list - 1, s)
-                 ]
+import time
+import itertools
 
-print(permute(1, ["a","b","c"]))
-print(permute(2, ["a","b","c"]))
+
+def permutations(lst, r):
+    lst = sorted(lst)
+    # lst.sort()
+    used = [0 for _ in range(len(lst))]
+    perms = []
+    def generate(chosen, used):
+        if len(chosen) == r:
+            perms.append(chosen[:])
+        else:
+            for i in range(len(lst)):
+                if not used[i] and (i == 0 or lst[i-1] != lst[i] or used[i-1]):
+                    chosen.append(lst[i])
+                    used[i] = 1
+                    generate(chosen, used)
+                    used[i] = 0
+                    chosen.pop()
+
+    generate([], used)
+    return perms
+
+
+def combinations(lst, r):
+    lst = sorted(lst)
+    used = [0 for _ in range(len(lst))]
+    coms = []
+    def generate(chosen, used):
+        if len(chosen) == r:
+            coms.append(chosen[:])
+        else:
+            start = lst.index(chosen[-1]) + 1 if chosen else 0
+            for nxt in range(start, len(lst)):
+                if not used[nxt] and (not nxt or lst[nxt-1] != lst[nxt] or used[nxt-1]):
+                    chosen.append(lst[nxt])
+                    used[nxt] = 1
+                    generate(chosen, used)
+                    used[nxt] = 0
+                    chosen.pop()
+    generate([], used)
+    return coms
+
+
+lst = [3, 3, 2, 3]
+perms = permutations(lst, 2)
+coms = combinations(lst, 2)
+for i in coms:
+    print(i)
+print(lst)
