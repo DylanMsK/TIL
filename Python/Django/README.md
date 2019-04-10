@@ -110,8 +110,23 @@
    
    In [1]: 
    ```
+3. django-bootstrap4
 
-   
+    django form에 부트스트랩을 적용해줌
+
+       ```bash
+   $ pip install django-bootstrap4
+   ```
+
+   - settings.py
+
+   ```python
+   INSTALLED_APPS = [
+       ...
+       'bootstrap4',
+   ]
+   ```
+  
 
 
 
