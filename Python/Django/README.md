@@ -13,47 +13,47 @@
 - Set pyenv environment variable
 
   ```bash
-  $ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-  $ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-  $ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
+  echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+  echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+  echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
   
-  $ source ~/.bashrc
+  source ~/.bashrc
   ```
 
 - Install pyenv virtualenv
 
   ```bash
-  $ git clone https://github.com/pyenv/pyenv-virtualenv.git $PYENV_ROOT/plugins/pyenv-virtualenv
+  git clone https://github.com/pyenv/pyenv-virtualenv.git $PYENV_ROOT/plugins/pyenv-virtualenv
   ```
 
 - Set pyenv-virtualenv environment variable
 
   ```bash
-  $ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
-  $ source ~/.bashrc
+  echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+  source ~/.bashrc
   ```
 
 - Install Python
 
   ```bash
-  $ pyenv install --list
-  $ pyenv install <python version>
-  $ echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-  $ source ~/.bashrc
+  pyenv install --list
+  pyenv install <python version>
+  echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+  source ~/.bashrc
   ```
 
 - Make virtual environment
 
   ```bash
   # 전역에서 <python version> 사용
-  $ pyenv global <python version>
-  $ python -V
+  pyenv global <python version>
+  python -V
   Python <python version>
   # 특정 폴더를 가상환경으로 사용
-  $ pyenv virtualenv <python version> <virtual environment name for setting>
-  $ pyenv local tele
-  $ pyenv activate <virtual environment name for setting>
-  $ pyenv deactivate		# 가상환경 종료
+  pyenv virtualenv <python version> <virtual environment name for setting>
+  pyenv local tele
+  pyenv activate <virtual environment name for setting>
+  pyenv deactivate		# 가상환경 종료
   ```
 
 
