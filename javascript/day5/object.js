@@ -27,10 +27,10 @@ junse = {
         return '끙..'
     }
 }
-// console.log(donghoon.name)
-// console.log(donghoon.poop())
-// console.log(junse.name)
-// console.log(junse.poop())
+console.log(donghoon.name)
+console.log(donghoon.poop())
+console.log(junse.name)
+console.log(junse.poop())
 
 // real oop in js
 class Person {
