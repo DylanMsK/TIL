@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>이건 헤더</h1>
+  <p id="app">{{ msg }}</p>
+  <button id="btn">버튼</button>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    // with js
+    // btn이 눌렸을때, p태그 안에 '누르지마!'
+    // const btn = document.querySelector('#btn')
+    // btn.addEventListener('click', function(e){
+    //   console.log(e)
+    //   const app = document.querySelector('#app')
+    //   app.innerHTML = '누르지마!!'
+    // })
+
+    // with vue
+    let app = new Vue({
+      // 주어
+      el: '#app',     // element
+      // 목적어
+      data: {
+        msg: 'Happy Hacking!',
+        count: 0,
+      },              // django에서의 content와 비슷
+      // 동사
+      method: {
+        plus: function() {
+          this.count += 1
+        }
+      }
+    })   // Vue 클래스의 새로운 인스턴스를 app이름으로 생성
+  </script>
+</body>
+</html>

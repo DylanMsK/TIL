@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id='app'>
+    <span v-html='header'></span>
+    <h2>{{subheader}}</h2>
+    <h2>{{subheader}}</h2>
+    <h2>{{subheader}}</h2>
+    
+    <!-- <ul>
+      <li>{{todo[0]}}</li>
+        <li>{{todo[1]}}</li>
+        <li>{{todo[2]}}</li>
+    </ul> -->
+    <ul>
+      <li v-for='todo in todos'>{{todo}}</li>
+    </ul>
+    <p v-if='checked'>{{todos}}</p>
+    <p>{{donghoon.major}}</p>
+    <ol>
+      <li v-for='dh in donghoon'>{{dh}}</li>
+    </ol>
+
+    <input v-model='subheader'>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: '#app',
+        data: {
+          header: '<h1>Todo App</h1>',
+          subheader: 'This is Todo App.',
+          todos: ['동사무소 가기', '입대확인증 뽑기', '재입대하기'],
+          checked: true,
+          donghoon: {
+            name: '동훈',
+            gunPil: true,
+            major: '기계공학'
+          },
+        }
+      })
+    </script>
+</body>
+</html>
