@@ -12,19 +12,19 @@
     <p v-once>데이터: {{msg | capitalize}}</p>
     <p>{{reverseMsg}}</p>
     <p>함수 실행 결과: {{hello()}}</p>
-    <img v-bind:src="imageSource" width=400px>
-    <a v-bind:href="barackInsta">go to insta</a>
+    <!-- <img v-bind:src="imageSource" width=400px> -->
+    <!-- <a v-bind:href="barackInsta">go to insta</a> -->
     <div id="userInput">
-      <input v-model='userInput' v-on:keyup.enter='addInput'>
-      <button v-on:click='addInput'>todo 추가</button>
+      <input v-model='userInput' @keyup.enter='addInput'>
+      <button @click='addInput'>todo 추가</button>
     </div>
     <ul>
       <li v-for='(todo, index) in todos'>
         <span>{{index+1}} : {{todo}}</span></li>
-    </ul>
-    <p>{{todos}}</p>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="./app.js"></script>
+      </ul>
+      <!-- <p>{{todos}}</p> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./app.js"></script>
 </body>
 </html>

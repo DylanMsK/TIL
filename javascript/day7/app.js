@@ -1,12 +1,29 @@
+// localStorage = {
+//     'vue-app': []
+// }
+
+const STORAGE_KEY = 'vue-app'
+const todoStorage = {
+    fetch: function() {
+        const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
+        return data
+    },
+    save: function(todos) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
+    }
+}
+// todoStorage.save()
+// todoStorage.fetch()
+
 let app = new Vue({
     el: '#app',
     data: {
         header: 'Todo App',
         msg: 'hello',
         userInput: '',
-        todos: [],
+        todos: todoStorage.fetch(),
         imageSource: 'http://www.ulsanfocus.com/news/photo/201804/114283_177280_4712.jpg',
-        barackInsta: 'https://www.instagram.com/barackobama/?hl=ko'
+        barackInsta: 'https://www.instagram.com/barackobama/?hl=ko',
     },
     methods: {
         hello: function() {
@@ -16,6 +33,7 @@ let app = new Vue({
         
         addInput: function() {
             this.todos.push(this.userInput)
+            todoStorage.save(this.todos)
             this.clearInput()
         },
 

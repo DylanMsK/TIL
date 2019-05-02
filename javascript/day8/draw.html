@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>색깔놀이</title>
+  <style>
+    .box {
+      width: 50px;
+      height: 50px;
+      background-color: gray;
+      margin: 5px;
+      display: inline-block;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .yellow {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div @click='changeColor' :class='{red: isChanged}' class="box" ></div>
+    <div @click='changeColor' :class='{red: isChanged}' class="box" ></div>
+    <div :class='{red: changeClass}' class="box" ></div>
+    <div class="box" ></div>
+    <input v-model='color'>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        color: 'red',
+        isChanged: false,
+      },
+      methods: {
+        changeColor: function() {
+          // this.color='red'
+          this.isChanged = !this.isChanged
+        }
+      },
+      computed: {
+        changeClass: function() {
+          return this.isChanged
+        }
+      }
+    })
+  </script>
+</body>
+</html>
