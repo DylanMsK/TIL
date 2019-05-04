@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css">
+  <!-- Vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- Axios -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <form action="" id="main">
+    <div class="bar">
+      <input
+        type="text"
+        v-model='query'
+        placeholder="검색어를 입력해주새오">
+    </div>
+    <ul>
+      <li v-for='movie in filteredMovies'>
+        <img v-bind:src='movie.image'>
+        <p>{{movie.title}}</p>
+      </li>
+    </ul>
+  </form>
+  <script src="./vue.js"></script>
+</body>
+</html>
