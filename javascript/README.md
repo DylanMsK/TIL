@@ -1,20 +1,20 @@
-# JavaScript Tutorial
+# Learn JavaScript
 
+## 1. Introduction
 
+### 1. Introduction to JavaScript
 
-## Introduction to JavaScript
-
-### 1. What is JavaScript?
+#### 1. What is JavaScript?
 
 **[자바스크립트]([https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8](https://ko.wikipedia.org/wiki/자바스크립트))**(JavaScript)는 [객체 기반](https://ko.wikipedia.org/wiki/프로토타입_기반_프로그래밍)의 [스크립트 프로그래밍 언어](https://ko.wikipedia.org/wiki/스크립트_언어)이다. 이 언어는 [웹 브라우저](https://ko.wikipedia.org/wiki/웹_브라우저) 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 [Node.js](https://ko.wikipedia.org/wiki/Node.js)와 같은 런타임 환경과 같이 서버 사이드 네트워크 프로그래밍에도 사용되고 있다. 자바스크립트는 본래 [넷스케이프 커뮤니케이션즈 코퍼레이션](https://ko.wikipedia.org/wiki/넷스케이프_커뮤니케이션즈_코퍼레이션)의 [브렌던 아이크](https://ko.wikipedia.org/wiki/브렌던_아이크)(Brendan Eich)가 처음에는 *모카*(Mocha)라는 이름으로, 나중에는 *라이브스크립트*(LiveScript)라는 이름으로 개발하였으며, 최종적으로 자바스크립트가 되었다. 자바스크립트가 [썬 마이크로시스템즈](https://ko.wikipedia.org/wiki/썬_마이크로시스템즈)의 [자바](https://ko.wikipedia.org/wiki/자바_(프로그래밍_언어))와 [구문](https://ko.wikipedia.org/wiki/구문_(프로그래밍_언어))(syntax)이 유사한 점도 있지만, 이는 사실 두 언어 모두 C 언어의 기본 구문에 바탕을 뒀기 때문이고, 자바와 자바스크립트는 직접적인 관련성이 없다. 이름과 구문 외에는 자바보다 [셀프](https://ko.wikipedia.org/w/index.php?title=셀프_프로그래밍_언어&action=edit&redlink=1)와 유사성이 많다.
 
 2013년 1월 기준으로, 가장 최근 버전은 자바스크립트 1.8.5이고, [파이어폭스](https://ko.wikipedia.org/wiki/모질라_파이어폭스) 3에서 지원된다. 표준 ECMA-262 3판에 대응하는 자바스크립트 버전은 1.5이다. [ECMA스크립트](https://ko.wikipedia.org/wiki/ECMA스크립트)는 쉽게 말해 자바스크립트의 표준화된 버전이다. [모질라](https://ko.wikipedia.org/wiki/모질라_애플리케이션_스위트) 1.8 베타 1이 나오면서 [XML](https://ko.wikipedia.org/wiki/XML)에 대응하는 확장 언어인 [E4X](https://ko.wikipedia.org/w/index.php?title=E4X&action=edit&redlink=1)(ECMA-357)를 부분 지원하게 되었다. 자바스크립트는 브라우저마다 지원되는 버전이 다르다.
 
-**간단히 말해 정적인 HTML의 한계를 벗어나 동적으로 사용자와 상호작용하기위해 생겨남!**
+**간단히 말해 정적인 HTML의 한계를 벗어나 동적으로 브라우저를 조작하여 사용자와 상호작용하기위해 생겨남!**
 
 
 
-### 2. Console
+#### 2. Console
 
 로그를 확인하고 스크립트 명령어를 입력하는 패널입니다. 중단점을 건 시점의 변수를 확인할 수 있고 값을 평가하거나 수정할 수 있습니다.
 
@@ -32,7 +32,7 @@
 
      
 
-#### *Console Methods*
+##### *Console Methods*
 
 기타 다른 method는 [MDN web docs](https://developer.mozilla.org/ko/docs/Web/API/Console) 을 참조
 
@@ -71,48 +71,48 @@
    지정된 [timer](https://developer.mozilla.org/en-US/docs/Web/API/console#Timers)를 중지하고, 타이머 시작으로 부터 경과된 시간을 출력한다.
 
 ```javascript
-console.time('timer1');
+console.time('timer');
 for (var i = 0; i < 100000; i++);
-console.timeEnd('timer1');	// timer: 0.298095603123ms
+console.timeEnd('timer');	// timer: 0.298095603123ms
 ```
 
 
 
-### 3. Comments
+#### 3. Comments
 
 한 줄 주석은 `//` , 여러 줄 주석은 `/*  */`
 
-#### *Single line comment*
+##### *Single line comment*
 
 ```javascript
-// Prints 5 to the console
+// 콘솔에 5 출력
 console.log(5);
 
-console.log(5);  // Prints 5 
+console.log(5);  // 5 출력 
 ```
 
 
 
-#### *Multi-line comment*
+##### *Multi-line comment*
 
 ```javascript
 /*
-This is all commented 
+이건 멀티라인 주석
 console.log(10);
-None of this is going to run!
+아무것도 안돌아감!
 console.log(99);
 */
 
-console.log(/*IGNORED!*/ 5);  // Still just prints 5 
+console.log(/*IGNORED!*/ 5);  // 이건 정상적으로 5 출력 
 ```
 
 
 
-### 4. Data Types
+#### 4. Data Types
 
 자세한 내용은 [MDN web docs](https://developer.mozilla.org/ko/docs/Web/JavaScript/Data_structures) 참조
 
-#### *기본 타입 (Primitive Values)*
+##### *기본 타입 (Primitive Values)*
 
 자바스크립에서는 오브젝트를 제외한 모든 값은 변경 불가능한 값 (immutable value) 이다. 예를 들자면, 특히 C 언어와는 다르게도, 문자열은 불변값 (immutable) 이다. 이런 값을 "[primitive values](Null 타입은 딱 한 가지 값, `null` 을 가질 수 있다. 더 알아보려면 [`null`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/null) 와 [Null](https://developer.mozilla.org/en-US/docs/Glossary/Null) 을 보라.)" 라고 일컫는다.
 
@@ -160,7 +160,7 @@ console.log(/*IGNORED!*/ 5);  // Still just prints 5
 
 
 
-#### *객체 (Objects)*
+##### *객체 (Objects)*
 
 - `Properties`
 
@@ -168,7 +168,7 @@ console.log(/*IGNORED!*/ 5);  // Still just prints 5
 
   두 종류의 객체 속성이 있는데, 이들은 종류에 따라 특성값들을 가질 수 있다. 데이터 (data) 속성과 접근자 (accessor) 속성이 그것이다.
 
-  - **Data Property**
+  - ###### **Data Property**
 
     키에 값을 연결하고, 아래와 같은 특성들 (attribute) 이 있다.
 
@@ -179,7 +179,7 @@ console.log(/*IGNORED!*/ 5);  // Still just prints 5
     | [[Enumerable]]   | Boolean                         | `true` 라면, 이 속성은 for…in 루프에서 열거될 수 있다        | false     |
     | [[Configurable]] | Boolean                         | `flase` 라면, 이 속성은 제거될 수 없고, [[Value]]와 [[Writable]] 외에는 수정될 수 없다 | false     |
 
-  - **Accessor Property**
+  - ###### **Accessor Property**
 
     값을 가져오거나 값을 저장하기 위해 키에 하나 혹은 두 개의 접근자 함수 (get, set) 연결짓는다. 아래와 같은 특성이 있다.
 
@@ -198,7 +198,9 @@ console.log(/*IGNORED!*/ 5);  // Still just prints 5
 
 
 
-### 5. Arithmetic Operators
+#### 5. Arithmetic Operators
+
+자바스크립트는 다음과 같은 형태의 다양한 연산자들이 있다. 연산자 관례에 관한 자세한 정보는 링크를 통해 확인!
 
 - [대입 연산자](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators#대입_연산자)
 - [비교 연산자](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators#비교_연산자)
@@ -213,5 +215,96 @@ console.log(/*IGNORED!*/ 5);  // Still just prints 5
 
 
 
-### 6. String Concatenation
+#### 6. Properties & Methods
+
+프로퍼티 접근자(property accessor)는 점 또는 괄호 표기법으로 객체 프로퍼티에 접근할 수 있도록 해준다.
+
+객체를 연관 배열(*associative array* , *map* , *dictionary* , *hash*, *lookup table* 등)로 생각할 수 있는데, 배열의 키는 객체 프로퍼티의 이름이다. 보통 프로퍼티와 메서드를 구별할 때 객체의 프로퍼티에 대해 언급한다. 그러나 프로퍼티와 메서드를 구별하는 건 관례에 불과하며, 메서드는 그저 호출할 수 있는 프로퍼티다. 값이 아닌 [Function](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions) 인스턴스를 참조하는 경우는 메서드가 된다.
+
+프로퍼티에 접근하는 방법에는 **점 표기법** 과 **괄호 표기법** 두 가지가 있다.
+
+- ###### 점 표기법
+
+  ```javascript
+  get = object.property;
+  object.property = set;
+  ```
+
+  이 코드에서 `property`는 유효한 자바스크립트 식별자(identifier)여야 한다. 유효한 식별자는 숫자로 시작할 수 없고, 영문과 숫자(alphanumerical), 밑줄("`_`"), 달러 기호("`$`")로 구성됩니다. 예를 들어, `object.$1`은 유효하지만 `object.1`은 아니다.
+
+  ```JavaScript
+  document.createElement('button');
+  ```
+
+  여기서, "createElement" 메서드는 `document` 객체로부터 검색되어 호출된다.
+
+- ###### 괄호 표기법
+
+  ```javascript
+  get = object[propertyName];
+  object[propertyName] = set;
+  ```
+
+  괄호 표기법에서 `property_name`은 문자열이나 심볼(Symbol)이 될 수 있다. 이 때, 문자열은 유효한 식별자일 필요가 없으며, 어떤 값이든 될 수 있다. "1foo", "!bar!" 또는 " "(빈칸)도 가능!
+
+  ```javascript
+  document['createElement']('pre');
+  ```
+
+  이 코드는 위의 점 표기법에서 작성한 코드와 같게 동작함.
+
+
+
+### 2. Variables
+
+`var` 은 "function-scoped"이고 `let` ,`const` 는 "block-scoped" 이다. 
+
+
+
+#### 1. `var` keyword
+
+```javascript
+for (var i=0; i<3; i++) {
+  console.log(i)		// 0, 1, 2 출력
+}
+console.log(i)			// 3 출력
+```
+
+for-loop가 끝난다음에 i를 호출하면 출력이 된다. 그 이유는  `var` 가 function-scoped  [hoisting](https://developer.mozilla.org/ko/docs/Glossary/Hoisting) 되었기 때문!
+
+```javascript
+function counter() {
+  for (var i=0; i<3; i++) {
+    console.log(i)
+  }
+}
+counter()						// 0, 1, 2 출력
+
+console.log(i)			// ReferenceError: i is not defined
+```
+
+
+
+#### 2. `let` keyword
+
+`let` 은 `var` 와 다르게 변수 **재선언이 불가능** 하지만 **재할당은 가능**하다.
+
+```javascript
+let test = 'first declare';
+let test = 'second again';		// Uncaught SyntaxError: Identifier 'test' has already been declared
+test = 'reassignment';				// 가능
+```
+
+동일한 변수명으로 재선언시 SyntaxError가 발생하지만 재할당시 값이 정상적으로 바뀐다.
+
+```javascript
+for (let i=0; i<3; i++) {
+  console.log(i)				// 0, 1, 2 출력
+}
+console.log(i)					// Uncaught ReferenceError: i is not defined
+```
+
+`var` 과는 다르게 `let` 은 block-scoped 이기때문에 block 단위로 hoisting된다.
+
+
 
