@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="main">
+    <h1>Sticky Notes</h1>
+    <textarea v-model='content' @keyup.enter='writeMemo'></textarea>
+    <button @click='writeMemo'>Write!</button>
+    <div id="memo-container">
+      <div class="memo" v-for="memo in memos">
+        <div class="memo-delete-button" @click='deleteMemo(memo.id)'></div>
+        {{ memo.content }}
+      </div>
+    </div>
+  </div>
+  <script>
+  const app = new Vue({
+    el: '#main',
+    data: {
+      url: 'http://last-dylankang.c9users.io:8080/api/v1/memos/',
+      content: '',
+      memos: [],
+    },
+    methods: {
+      writeMemo: function() {
+        axios.post(this.url, {content: this.content})
+          .then(response => {
+            // console.log(response.data)
+            this.getMemos()
+            this.content = ''
+          })
+      },
+      deleteMemo: function(memo_id) {
+        console.log(memo_id)
+        axios.delete(this.url + memo_id + '/')
+          .then(response => {
+            this.getMemos()
+          })
+      },
+      getMemos: function() {
+        axios.get(this.url)
+        .then(response => {
+          // console.log(response.data)  // [{"content": "Hello, World!"}]
+          this.memos = response.data
+        })
+      }
+    },
+    created: function() {
+      this.getMemos()
+    }
+  })
+  </script>
+</body>
+</html>
