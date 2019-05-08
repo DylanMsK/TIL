@@ -211,3 +211,7 @@ console.log(/*IGNORED!*/ 5);  // Still just prints 5
 - [단항 연산자](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators#단항_연산자)
 - [관계 연산자](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators#관계_연산자)
 
+
+
+### 6. String Concatenation
+
