@@ -1,8 +1,8 @@
 <html>
   <head>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/6.2.4/firebase-app.js"></script>
-    <script src="/__/firebase/6.2.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
 
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -14,13 +14,21 @@
       <ul id="cafe-list"></ul>
     </div>
     
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-      https://firebase.google.com/docs/web/setup#reserved-urls -->
-    
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js">
-      // const db = firebase.firestore()
-      // db.settings({ timestampsInSnapshots: true });
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBZZeC0VHwqI07jd5dtpqtjyrK-i2l3Xb8",
+        authDomain: "ssafy-personal-portfolio.firebaseapp.com",
+        databaseURL: "https://ssafy-personal-portfolio.firebaseio.com",
+        projectId: "ssafy-personal-portfolio",
+        storageBucket: "ssafy-personal-portfolio.appspot.com",
+        messagingSenderId: "741075852629",
+        appId: "1:741075852629:web:2c6dde7c82d83ac8"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      const db = firebase.firestore();
     </script>
     <script src="app.js"></script>
   </body>
