@@ -10,7 +10,11 @@
     <h1>Cloud Cafe</h1>
 
     <div class="content">
-      <form id="add-cafe-form"></form>
+      <form id="add-cafe-form">
+        <input type="text" name="name" placeholder="Cafe name">
+        <input type="text" name="city" placeholder="Cafe city">
+        <button>Add cafe</button>
+      </form>
       <ul id="cafe-list"></ul>
     </div>
     
@@ -27,7 +31,6 @@
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
-
       const db = firebase.firestore();
     </script>
     <script src="app.js"></script>
