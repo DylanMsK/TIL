@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+
   <title>Game Guidez</title>
 </head>
 <body class="grey lighten-3">
@@ -101,29 +108,30 @@
   <!-- GUIDE LIST -->
   <div class="container" style="margin-top: 40px;">
     <ul class="collapsible z-depth-0 guides" style="border: none;">
-      <li>
-        <div class="collapsible-header grey lighten-4">Guide title</div>
-        <div class="collapsible-body white">Lorem ipsum dolor sit amet.</div>
-      </li>
-      <li>
-        <div class="collapsible-header grey lighten-4">Guide title</div>
-        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
-      </li>
-      <li>
-        <div class="collapsible-header grey lighten-4">Guide title</div>
-        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
-      </li>
-      <li>
-        <div class="collapsible-header grey lighten-4">Guide title</div>
-        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
-      </li>
+      
     </ul>
   </div>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBgZqWHQVeeFczAmf-LOOUchZAvT7xs4TY",
+      authDomain: "test-auth-ae645.firebaseapp.com",
+      databaseURL: "https://test-auth-ae645.firebaseio.com",
+      projectId: "test-auth-ae645",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+  </script>
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="scripts/auth.js"></script>
   <script src="scripts/index.js"></script>
-  
+
 </body>
 </html>
