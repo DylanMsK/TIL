@@ -12,6 +12,7 @@
     <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-functions.js"></script>
 
   <title>Game Guidez</title>
 </head>
@@ -42,6 +43,12 @@
       </ul>
     </div>
   </nav>
+
+  <!-- ADMIN ACTIONS -->
+  <form class="center-align admin-actions" style="margin: 40px auto; max-width: 300px;">
+    <input type="email" placeholder="User email" id="admin-email" required />
+    <button class="btn-small yellow darken-2 z-depth-0">Make admin</button>
+  </form>
 
   <!-- SIGN UP MODAL -->
   <div id="modal-signup" class="modal">
@@ -130,6 +137,7 @@
     // make auth and firestore references
     const auth = firebase.auth();
     const db = firebase.firestore();
+    const functions = firebase.functions();
   </script>
 
   <!-- Compiled and minified JavaScript -->
