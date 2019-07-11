@@ -11,22 +11,18 @@
 <body>
 
   <div id="vue-app">
-    <h1>looping through lists</h1>
-    <ul>
-      <li v-for="(character, idx) in characters">{{idx}} {{character}}</li>
-    </ul>
-    <ul>
-      <li v-for="(ninja, idx) in ninjas">{{idx+1}} {{ninja.name}} - {{ninja.age}}</li>
-    </ul>
-    <template v-for="(ninja, idx) in ninjas">
-      <h3>{{idx+1}} {{ninja.name}}</h3>
-      <p>{{ninja.age}}</p>
-    </template>
-    <template v-for="ninja in ninjas">
-      <div v-for="(val, key) in ninja">
-        <p>{{key}} - {{val}}</p>
-      </div>
-    </template>
+    <h1>Multiple Vue Instance</h1>
+
+    <div id="vue-app-one">
+      <h2>{{title}}</h2>
+      <p>{{greet}}</p>
+    </div>
+
+    <div id="vue-app-two">
+      <h2>{{title}}</h2>
+      <p>{{greet}}</p>
+      <button @click="changeTitle">Change App One Title</button>
+    </div>
   </div>
 
   <script src="app.js"></script>
