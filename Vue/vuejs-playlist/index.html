@@ -11,17 +11,11 @@
 <body>
 
   <div id="vue-app">
-    <h1>Multiple Vue Instance</h1>
-
-    <div id="vue-app-one">
-      <h2>Vue app one</h2>
-      <greeting></greeting>
-    </div>
-    
-    <div id="vue-app-two">
-      <h2>vue app two</h2>
-      <greeting></greeting>
-    </div>
+    <h2>Refs</h2>
+    <input type="text" ref="input">
+    <button @click="readRefs">Submit</button>
+    <p>Your fav food: {{output}}</p>
+    <div ref="test">Hello</div>
   </div>
 
   <script src="app.js"></script>
