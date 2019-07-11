@@ -1,13 +1,15 @@
 <template>
-  <add-blog></add-blog>
+  <show-blog></show-blog>
 </template>
 
 <script>
-import addBlogVue from './components/addBlog.vue';
+import addBlogVue from './components/addBlog';
+import showBlogs from './components/showBlogs';
 
 export default {
   components: {
-    'add-blog': addBlogVue
+    'add-blog': addBlogVue,
+    'show-blog': showBlogs
   },
   data () {
     return {
@@ -17,7 +19,7 @@ export default {
   methods: {
 
   }
-}
+};
 </script>
 
 <style>
