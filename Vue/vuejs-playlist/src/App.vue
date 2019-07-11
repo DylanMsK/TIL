@@ -1,27 +1,29 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
-    <Friends></Friends>
+    <app-header></app-header>
+    <app-ninjas></app-ninjas>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import Friends from './Dylan.vue'
+import Header from './components/header'
+import Footer from './components/footer'
+import Ninjas from './components/Ninjas'
 
 export default {
   components: {
-    Friends
+    'app-header': Header,
+    'app-footer': Footer,
+    'app-ninjas': Ninjas,
   },
   data () {
     return {
-      title: 'Dylan app'
     }
   }
 }
 </script>
 
-<style scoped>
-h1{
-  color: purple
-}
+<style>
+
 </style>
