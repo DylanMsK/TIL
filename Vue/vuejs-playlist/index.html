@@ -11,14 +11,11 @@
 <body>
 
   <div id="vue-app">
-    <h1>Events</h1>
-    <button @click.once="add(1)">Add a Year</button>
-    <button @click="subtract(1)">Subtract a Year</button>
-    <button @dblclick="add(10)">Add 10 Year</button>
-    <button @dblclick="subtract(10)">Subtract 10 Year</button>
-    <p>My age is {{ age }}</p>
-    <div id="canvas" @mousemove="updateXY">{{x}}, {{y}}</div>
-    <a @click.prevent="click" href="https://ihatecucumber.netlify.com/">IhateCucumber</a>
+    <h1>Keyboard Events</h1>
+    <label>Name:</label>
+    <input type="text" @keyup.enter="logName">
+    <label>Age:</label>
+    <input type="text" @keyup.alt.enter="logAge">
   </div>
 
   <script src="app.js"></script>
