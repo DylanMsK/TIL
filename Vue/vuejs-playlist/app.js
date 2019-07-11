@@ -15,6 +15,9 @@ new Vue({
 		updateXY(event) {
 			this.x = event.offsetX;
 			this.y = event.offsetY;
+		},
+		click() {
+			alert('You clicked me')
 		}
 	}
 });
