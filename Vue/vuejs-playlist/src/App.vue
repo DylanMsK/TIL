@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Header from './components/header'
-import Footer from './components/footer'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import Ninjas from './components/Ninjas'
 
 export default {

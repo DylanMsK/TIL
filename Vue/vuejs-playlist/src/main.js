@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-// import Friends from './Dylan.vue'
 
-// Vue.component('friends', Friends )
+export const bus = new Vue();
 
 new Vue({
   el: '#app',
