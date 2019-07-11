@@ -1,35 +1,21 @@
-const one = new Vue({
-	el: '#vue-app-one',
-	data: {
-		title: 'Vue App One'
-
+Vue.component('greeting', {
+	template: `<p>Hey there, I an {{name}}. <button @click="changeName">Change name</button></P>`,
+	data(){
+		return {
+			name:'Dylan'
+		}
 	},
 	methods: {
-
-	},
-	computed: {
-		greet(){
-			return `Hello from app one :)`
+		changeName(){
+			this.name = 'Mario'
 		}
 	}
 });
 
-const two = new Vue({
-	el: '#vue-app-two',
-	data: {
-		title: 'Vue App Two'
-	},
-	methods: {
-		changeTitle(){
-			one.title = 'Title changed'
-		}
-	},
-	computed: {
-		greet(){
-			return `Yo dudes, this is app 2 speaking to ya :)`
-		}
-
-	}
+new Vue({
+	el:'#vue-app-one'
 });
 
-two.title = 'Changed from outside';
+new Vue({
+	el:'#vue-app-two'
+}); 
