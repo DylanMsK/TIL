@@ -1,14 +1,20 @@
 new Vue({
 	el: "#vue-app",
 	data: {
-		name: 'Dylan',
-		job: 'Ninja',
-		website: 'https://ihatecucumber.netlify.com',
-		websiteTag: `<a href="https://ihatecucumber.netlify.com">IhateCucumber</a>`
+		age: 28,
+		x: 0,
+		y: 0
 	},
 	methods: {
-		greet(time) {
-			return `Good ${time}, ${this.name}!`;
+		add(inc) {
+			this.age += inc;
+		},
+		subtract(dec) {
+			this.age -= dec;
+		},
+		updateXY(event) {
+			this.x = event.offsetX;
+			this.y = event.offsetY;
 		}
 	}
 });

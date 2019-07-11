@@ -9,13 +9,17 @@
   <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
+
   <div id="vue-app">
-    <h1>Data Binding</h1>
-    <a v-bind:href="website">IHataCucumber</a>
-    <input type="text" v-bind:value='job'>
-    <p v-html="websiteTag"></p>
-    
+    <h1>Events</h1>
+    <button @click="add(1)">Add a Year</button>
+    <button @click="subtract(1)">Subtract a Year</button>
+    <button @dblclick="add(10)">Add 10 Year</button>
+    <button @dblclick="subtract(10)">Subtract 10 Year</button>
+    <p>My age is {{ age }}</p>
+    <div id="canvas" @mousemove="updateXY">{{x}}, {{y}}</div>
   </div>
+
   <script src="app.js"></script>
 </body>
 </html>
