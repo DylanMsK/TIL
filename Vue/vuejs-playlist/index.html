@@ -11,13 +11,22 @@
 <body>
 
   <div id="vue-app">
-    <h1>Conditionals</h1>
-    <button @click="error = !error">Toggle Error</button>
-    <button @click="success = !success">Toggle Success</button>
-    <!-- <p v-if="error">There has been an Error</p>
-    <p v-else-if="success">Whooo, Success</p> -->
-    <p v-show="error">There has been an Error</p>
-    <p v-show="success">Whooo, Success</p>
+    <h1>looping through lists</h1>
+    <ul>
+      <li v-for="(character, idx) in characters">{{idx}} {{character}}</li>
+    </ul>
+    <ul>
+      <li v-for="(ninja, idx) in ninjas">{{idx+1}} {{ninja.name}} - {{ninja.age}}</li>
+    </ul>
+    <template v-for="(ninja, idx) in ninjas">
+      <h3>{{idx+1}} {{ninja.name}}</h3>
+      <p>{{ninja.age}}</p>
+    </template>
+    <template v-for="ninja in ninjas">
+      <div v-for="(val, key) in ninja">
+        <p>{{key}} - {{val}}</p>
+      </div>
+    </template>
   </div>
 
   <script src="app.js"></script>
