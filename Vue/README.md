@@ -24,3 +24,12 @@
     - Use single file templates
     - compile everything on our machine, not in a browser
     - Live reload dev server
+
+
+
+### What is Vuex
+- A library / state management pattern for use with Vue.js
+- Allows us to create a centralized data store which can be accessed by all components in an app
+
+    - this sttore is known as a "single source of truth"
+
