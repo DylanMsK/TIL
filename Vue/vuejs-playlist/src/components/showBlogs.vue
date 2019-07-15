@@ -3,9 +3,9 @@
     <h1>All Blog Articles</h1>
     <input type="text" v-model="search" placeholder="search blogs" />
     <div v-for="blog in filterBlogs" class="single-blog">
-      <router-link :to="'/blog/'+blog.id">
+      <router-link :to="'/blog/' + blog.id">
         <h2 v-rainbow>{{ blog.title | toUppercase }}</h2>
-        <article>{{ blog.body | snippet }}</article>
+        <article>{{ blog.content | snippet }}</article>
       </router-link>
     </div>
   </div>
@@ -25,10 +25,16 @@ export default {
 
   },
   created() {
-    this.$http.get("https://jsonplaceholder.typicode.com/posts").then(data => {
-      console.log(data);
-      this.blogs = data.body.slice(0,10);
-    })
+    this.$http.get("https://vuejs-playlist-d4529.firebaseio.com/psots.json").then(data => {
+      return data.json();
+    }).then(data => {
+      const blogsArray = [];
+      for (let key in data) {
+        data[key].id = key;
+        blogsArray.push(data[key]);
+      };
+      this.blogs = blogsArray
+    });
   },
   filters: {
     toUppercase(value) {
